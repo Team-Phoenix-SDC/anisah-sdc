@@ -27,10 +27,20 @@ CREATE TABLE styles (
 );
 
 
+-- CREATE TABLE photos (
+--   id integer NOT NULL,
+--   styles_product_id integer NOT NULL,
+--   thumbnail_url text,
+--   url text,
+--   PRIMARY KEY(id)
+-- );
+
 CREATE TABLE photos (
+  id integer NOT NULL,
+  styles_product_id integer NOT NULL,
+  url text,
   thumbnail_url text,
-  url text NOT NULL,
-  styles_product_id integer NOT NULL
+  PRIMARY KEY(id)
 );
 
 

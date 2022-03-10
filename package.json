@@ -1,0 +1,27 @@
+{
+  "name": "anisah-sdc",
+  "version": "1.0.0",
+  "description": "System Design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Phoenix-SDC/anisah-sdc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Phoenix-SDC/anisah-sdc/issues"
+  },
+  "homepage": "https://github.com/Team-Phoenix-SDC/anisah-sdc#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "pg-promise": "^10.11.1"
+  }
+}
