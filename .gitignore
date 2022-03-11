@@ -1,6 +1,9 @@
 # CSV Files
 *.csv
 
+# Database Info
+/database/pool.js
+
 # Logs
 logs
 *.log
