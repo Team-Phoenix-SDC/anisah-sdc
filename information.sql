@@ -15,17 +15,7 @@ CREATE TABLE products (
   PRIMARY KEY(id, default_price)
 );
 
--- CREATE TABLE styles(
---   product_id integer NOT NULL,
---   style_id integer NOT NULL,
---   "name" text,
---   original_price integer,
---   sale_price integer,
---   products_default_price integer,
---   PRIMARY KEY(product_id, style_id)
--- );
-
-CREATE TABLE styles(
+CREATE TABLE styles (
   style_id integer NOT NULL,
   product_id integer NOT NULL,
   "name" text,
@@ -34,7 +24,6 @@ CREATE TABLE styles(
   products_default_price integer,
   PRIMARY KEY(style_id)
 );
-
 
 -- CREATE TABLE photos (
 --   id integer NOT NULL,
