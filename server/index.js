@@ -41,12 +41,14 @@ app.get('/products/:product_id', async (req, res) => {
   // GET /products/:product_id/styles
 app.get('/products/:product_id/styles', async (req, res) => {
   try {
+    let stylesObj = {};
     let data = await db.query(`SELECT * FROM styles WHERE product_id=${req.params.product_id}`)
     let pictures = await db.query(`SELECT * FROM photos WHERE styles_product_id=${req.params.product_id}`)
 
     if (pictures.length > data.length) {
       pictures.length = data.length;
     }
+    stylesObj.product_id = req.params.product_id;
 
     for (let i = 0; i < data.length; i++) {
       let photosArray = [];
@@ -54,7 +56,9 @@ app.get('/products/:product_id/styles', async (req, res) => {
       photosArray.push();
     }
 
-    res.status(200).send(data);
+    stylesObj.results = data;
+
+    res.status(200).send(stylesObj);
   }
   catch (err) {
     console.log('fool', err);
