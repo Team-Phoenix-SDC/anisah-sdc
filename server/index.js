@@ -15,19 +15,15 @@ app.get('/', (req, res) => {
 // endpoint for ALL products
   // GET /products
 app.get('/products', async (req, res) => {
-  let data = await db.query('SELECT * FROM products LIMIT 5')
+  let data = await db.query('SELECT * FROM products')
   res.status(200).send(data);
 })
 
 // endpoint for SINGULAR product
   // GET /products/:product_id
-
-  // B E L O W  T H I S IS CURRENTLY A SAMPLE ???
 app.get('/products/:product_id', async (req, res) => {
   let data = await db.query(`SELECT * FROM products WHERE id=${req.params.product_id}`)
-  console.log('req', req.params.product_id);
-  // i definitely need to change this query to be 'dynamic'
-  res.status(200).send(data);
+  res.status(200).send(data[0]);
 })
 
 // endpoint for ALL styles of a SINGULAR product
