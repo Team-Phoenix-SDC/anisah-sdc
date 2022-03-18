@@ -43,7 +43,7 @@ app.get('/products/:product_id/styles', async (req, res) => {
   try {
     let stylesObj = {};
     let data = await db.query(`SELECT * FROM styles WHERE product_id=${req.params.product_id}`)
-    let pictures = await db.query(`SELECT * FROM photos WHERE styles_product_id=${req.params.product_id}`)
+    let pictures = await db.query(`SELECT * FROM photos WHERE styles_style_id=${req.params.product_id}`)
 
     if (pictures.length > data.length) {
       pictures.length = data.length;
